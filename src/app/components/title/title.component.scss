@@ -1,0 +1,33 @@
+.container {
+  gap: 2.4rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.9rem;
+  justify-content: space-between;
+
+  .h1 {
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: var(--2D2D2D);
+  }
+
+  .body--m {
+    margin-top: 0.8rem;
+    color: var(--A445ED);
+    display: inline-block;
+  }
+
+  .audio {
+    display: none;
+  }
+
+  img {
+    width: 4.8rem;
+    height: 4.8rem;
+    cursor: pointer;
+
+    &:hover {
+      content: url('/assets/images/icon-play-hover.svg');
+    }
+  }
+}

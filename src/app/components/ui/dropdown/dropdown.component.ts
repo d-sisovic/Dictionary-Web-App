@@ -1,6 +1,6 @@
-import { NgClass } from '@angular/common';
+import { DOCUMENT, NgClass } from '@angular/common';
 import { ILabelValue } from '../../../ts/models/label-value.model';
-import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, HostListener, Input, Output, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, HostListener, Inject, Input, Output, inject } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -33,7 +33,24 @@ export class DropdownComponent {
 
   private elementRef = inject(ElementRef);
 
+  constructor(@Inject(DOCUMENT) private readonly document: Document) { }
+
   public onSelect(item: ILabelValue): void {
+    this.document.documentElement.style.setProperty('--font-family', this.getCorrectFontFamily(item.value));
+
     this.selectEvent.emit(item);
+  }
+
+  private getCorrectFontFamily(value: string): string {
+    switch (value) {
+      case 'Sans Serif':
+        return "Inter-Regular";
+      case 'Serif':
+        return "Lora-Regular";
+      case 'Mono':
+        return "Inconsolata-Regular";
+      default:
+        return "Inter-Regular";
+    }
   }
 }

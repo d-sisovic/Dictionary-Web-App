@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="header">
+    <p class="type">{{meaning.partOfSpeech}}</p>
+
+    <div class="line"></div>
+  </div>
+
+  <p class="title">Meaning</p>
+
+  <div class="list">
+    @for (item of meaning.definitions; track item.definition) {
+    <div class="list__item">
+      <span class="dot"></span>
+
+      <span>{{item.definition}}</span>
+    </div>
+
+    @if (item.example; as example) {
+    <span class="example">"{{example}}"</span>
+    }
+    }
+  </div>
+
+  @if(meaning.synonyms.length) {
+  <div class="synonyms">
+    <p class="label">Synonyms</p>
+
+    <span class="value">{{meaning.synonyms.join(', ')}}</span>
+  </div>
+  }
+</div>

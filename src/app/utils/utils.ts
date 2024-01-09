@@ -8,4 +8,4 @@ export function createTrimWhitespaceValidator() {
       return null;
     }
   };
-}
+};

@@ -1,8 +1,10 @@
 import { NgClass } from '@angular/common';
-import { debounceTime, distinctUntilChanged } from 'rxjs';
+import { StoreService } from '../../../services/store.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { createTrimWhitespaceValidator } from '../../../utils/utils';
+import { debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FreeDictionaryHttpService } from '../../../services/free-dictionary-http.service';
 import { ChangeDetectionStrategy, Component, DestroyRef, Input, OnInit, inject } from '@angular/core';
 
 @Component({
@@ -22,6 +24,8 @@ export class InputComponent implements OnInit {
 
   private readonly destroyRef = inject(DestroyRef);
   private readonly formBuilder = inject(FormBuilder);
+  private readonly storeService = inject(StoreService);
+  private readonly freeDictionaryHttpService = inject(FreeDictionaryHttpService);
 
   public inputForm!: FormGroup;
 
@@ -38,10 +42,12 @@ export class InputComponent implements OnInit {
     this.getKeywordControl.valueChanges
       .pipe(
         distinctUntilChanged(),
-        debounceTime(250),
+        debounceTime(500),
+        switchMap(keyword => this.freeDictionaryHttpService.fetchKeywordDictionary$(keyword)),
+        tap(() => this.storeService.setKeyword(this.getKeywordControl.value)),
         takeUntilDestroyed(this.destroyRef)
       )
-      .subscribe(console.log);
+      .subscribe();
   }
 
   public get getKeywordControl(): FormControl {
