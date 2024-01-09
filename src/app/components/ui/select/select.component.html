@@ -1,0 +1,21 @@
+<div class="container">
+  @if(selectedItem) {
+  <span class="selectable" [ngClass]="{
+        'selectable--Mono': selectedItem.value === 'Mono',
+        'selectable--Serif': selectedItem.value === 'Serif',
+        'selectable--SansSerif': selectedItem.value === 'Sans Serif'
+    }" (click)="onToggleDropdown()">
+    {{selectedItem.label}}
+
+    <img src="assets/images/icon-arrow-down.svg" alt="icon-arrow-down"
+      [@rotateChevron]="showDropdown ? 'open' : 'closed'">
+  </span>
+  }
+
+  @if(showDropdown) {
+  <div class="dropdown">
+    <app-dropdown [items]="items" (selectEvent)="onSelectItem($event)" (closeDropdownEvent)="onToggleDropdown()">
+    </app-dropdown>
+  </div>
+  }
+</div>

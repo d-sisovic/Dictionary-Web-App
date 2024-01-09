@@ -1,0 +1,10 @@
+<div class="container">
+  @for (item of items; let index = $index; track index; ) {
+  <div class="container__item" [ngClass]="{
+    'container__item--0': index === 0,
+    'container__item--1': index === 1,
+    'container__item--2': index === 2
+    }" (click)="onSelect(item)">{{item.label}}
+  </div>
+  }
+</div>

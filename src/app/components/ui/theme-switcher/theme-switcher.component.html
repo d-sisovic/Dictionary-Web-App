@@ -1,0 +1,8 @@
+<div class="container">
+  <label class="switcher">
+    <input type="checkbox" [checked]="checkboxState" [(ngModel)]="checkboxState" (ngModelChange)="onChange($event)" />
+    <span class="switcher__circle"></span>
+  </label>
+
+  <img src="assets/images/icon-moon.svg" alt="icon-moon">
+</div>

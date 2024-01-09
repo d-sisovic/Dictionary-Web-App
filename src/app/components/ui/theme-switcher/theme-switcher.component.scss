@@ -1,0 +1,48 @@
+.container {
+  gap: 1.9rem;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 2rem;
+  }
+
+  .switcher {
+    width: 4rem;
+    height: 2rem;
+    position: relative;
+    display: inline-block;
+
+    input[type="checkbox"] {
+      display: none;
+
+      &:checked+.switcher__circle::before {
+        left: initial;
+        transform: translateX(calc(100% + 0.6rem));
+      }
+    }
+
+    &__circle {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.3rem;
+      cursor: pointer;
+      position: absolute;
+      border-radius: 99.9rem;
+      background-color: var(--757575);
+
+      &::before {
+        content: "";
+        left: 0.4rem;
+        width: 1.4rem;
+        height: 1.4rem;
+        position: absolute;
+        border-radius: 50%;
+        background-color: var(--FFFFFF);
+        transition: transform 0.5s ease;
+      }
+    }
+  }
+}

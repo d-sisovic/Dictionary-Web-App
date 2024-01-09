@@ -1,0 +1,11 @@
+<form [formGroup]="inputForm" class="container">
+  <input type="text" [placeholder]="placeholder" class="input" formControlName="keyword"
+    [ngClass]="{'input--error': !getKeywordControl.valid && getKeywordControl.dirty}">
+
+  <img src="assets/images/icon-search.svg" alt="icon-search">
+</form>
+
+@if(!getKeywordControl.valid && getKeywordControl.dirty) {
+  <span class="error heading--s">Whoops, can't be empty…</span>
+}
+

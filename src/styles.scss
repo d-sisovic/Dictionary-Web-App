@@ -13,97 +13,35 @@
   --FFFFFF: #FFFFFF;
   --A445ED: #A445ED;
   --FF5252: #FF5252;
+  --font-family: "Inter-Regular";
 }
 
-// Inter
-.heading--l-inter {
+.heading--l {
   font-size: 6.4rem;
   line-height: 7.7rem;
-  font-family: "Inter-Bold";
+  font-family: var(--font-family);
 }
 
-.heading--m-inter {
+.heading--m {
   font-size: 2.4rem;
   line-height: 2.9rem;
-  font-family: "Inter-Regular";
+  font-family: var(--font-family);
 }
 
-.heading--s-inter {
+.heading--s {
   font-size: 2rem;
   line-height: 2.4rem;
-  font-family: "Inter-Regular";
+  font-family: var(--font-family);
 }
 
-.body--m-inter {
+.body--m {
   font-size: 1.8rem;
   line-height: 2.4rem;
-  font-family: "Inter-Regular";
+  font-family: var(--font-family);
 }
 
-.body--s-inter {
+.body--s {
   font-size: 1.4rem;
   line-height: 1.7rem;
-  font-family: "Inter-Regular";
-}
-
-// Lora
-.heading--l-lora {
-  font-size: 6.4rem;
-  line-height: 7.7rem;
-  font-family: "Lora-Bold";
-}
-
-.heading--m-lora {
-  font-size: 2.4rem;
-  line-height: 2.9rem;
-  font-family: "Lora-Regular";
-}
-
-.heading--s-lora {
-  font-size: 2rem;
-  line-height: 2.4rem;
-  font-family: "Lora-Regular";
-}
-
-.body--m-lora {
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  font-family: "Lora-Regular";
-}
-
-.body--s-lora {
-  font-size: 1.4rem;
-  line-height: 1.7rem;
-  font-family: "Lora-Regular";
-}
-
-// Mono
-.heading--l-mono {
-  font-size: 6.4rem;
-  line-height: 7.7rem;
-  font-family: "Inconsolata-Bold";
-}
-
-.heading--m-mono {
-  font-size: 2.4rem;
-  line-height: 2.9rem;
-  font-family: "Inconsolata-Regular";
-}
-
-.heading--s-mono {
-  font-size: 2rem;
-  line-height: 2.4rem;
-  font-family: "Inconsolata-Regular";
-}
-
-.body--m-mono {
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  font-family: "Inconsolata-Regular";
-}
-
-.body--s-mono {
-  font-size: 1.4rem;
-  line-height: 1.7rem;
-  font-family: "Inconsolata-Regular";
+  font-family: var(--font-family);
 }
