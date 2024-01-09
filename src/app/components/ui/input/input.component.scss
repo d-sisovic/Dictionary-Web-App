@@ -1,3 +1,5 @@
+@use "../../../../styles/breakpoints";
+
 .container {
   width: 100%;
   position: relative;
@@ -40,4 +42,12 @@
   margin-top: 0.8rem;
   color: var(--FF5252);
   display: inline-block;
+}
+
+@include breakpoints.mq(tablet) {
+  .container {
+    .input {
+      padding: 2rem 2.4rem;
+    }
+  }
 }

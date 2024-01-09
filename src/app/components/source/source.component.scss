@@ -1,29 +1,45 @@
+@use "../../../styles/breakpoints";
+
 .line {
   margin-top: 3.2rem;
   margin-bottom: 2.4rem;
 }
 
-.source {
-  font-weight: 400;
-  color: var(--757575);
-  text-decoration-line: underline;
+.container {
+  .source {
+    font-weight: 400;
+    color: var(--757575);
+    text-decoration-line: underline;
+  }
+
+  .list {
+    gap: 0.8rem;
+    display: flex;
+    margin-top: 0.8rem;
+    flex-direction: column;
+
+    &__item {
+      gap: 0.9rem;
+      display: flex;
+      align-items: center;
+
+      a {
+        font-weight: 400;
+        color: var(--2D2D2D);
+        text-decoration-line: underline;
+      }
+    }
+  }
 }
 
-.list {
-  gap: 0.8rem;
-  display: flex;
-  margin-top: 0.8rem;
-  flex-direction: column;
-
-  &__item {
-    gap: 0.9rem;
+@include breakpoints.mq(tablet) {
+  .container {
+    gap: 2.1rem;
     display: flex;
     align-items: center;
 
-    a {
-      font-weight: 400;
-      color: var(--2D2D2D);
-      text-decoration-line: underline;
+    .list {
+      margin-top: 0;
     }
   }
 }
