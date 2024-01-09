@@ -13,7 +13,31 @@
   --FFFFFF: #FFFFFF;
   --A445ED: #A445ED;
   --FF5252: #FF5252;
+  --dropdown-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.10);
+  --moon-icon: url("/assets/images/icon-moon.svg");
   --font-family: "Inter-Regular";
+}
+
+[data-theme="true"] {
+  --FFFFFF: #050505;
+  --2D2D2D: #FFFFFF;
+  --F4F4F4: #1F1F1F;
+  --dropdown-box-shadow: 0px 5px 30px 0px #A445ED;
+  --moon-icon: url("/assets/images/icon-moon-dark.svg");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --FFFFFF: #050505;
+    --2D2D2D: #FFFFFF;
+    --F4F4F4: #1F1F1F;
+    --dropdown-box-shadow: 0px 5px 30px 0px #A445ED;
+    --moon-icon: url("/assets/images/icon-moon-dark.svg");
+  }
+}
+
+body {
+  background: var(--FFFFFF);
 }
 
 .heading--l {

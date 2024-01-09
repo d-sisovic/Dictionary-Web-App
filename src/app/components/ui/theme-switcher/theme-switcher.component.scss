@@ -5,6 +5,7 @@
 
   img {
     height: 2rem;
+    content: var(--moon-icon);
   }
 
   .switcher {
@@ -44,7 +45,7 @@
         height: 1.4rem;
         position: absolute;
         border-radius: 50%;
-        background-color: var(--FFFFFF);
+        background-color: #FFFFFF;
         transition: transform 0.5s ease;
       }
     }
