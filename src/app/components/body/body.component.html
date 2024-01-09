@@ -1,0 +1,19 @@
+@if(dictionaryData(); as dictionaryData) {
+<div class="container">
+  <app-title [dictionaryData]="dictionaryData"></app-title>
+
+  <div class="body">
+    @for (meaning of dictionaryData.meanings; track meaning.partOfSpeech) {
+    <app-meaning [meaning]="meaning"></app-meaning>
+    }
+  </div>
+
+  @if (dictionaryData.sourceUrls.length) {
+  <app-source [dictionaryData]="dictionaryData"></app-source>
+  }
+</div>
+} @else {
+  @if (keyword().length) {
+    <app-no-result></app-no-result>
+  }
+}

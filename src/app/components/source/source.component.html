@@ -1,0 +1,13 @@
+<div class="line"></div>
+
+<h1 class="source body--s">Source</h1>
+
+<div class="list">
+  @for (source of dictionaryData.sourceUrls; track source) {
+    <div class="list__item">
+      <a [href]="source" class="body--s" target="_blank">{{source}}</a>
+
+      <img src="assets/images/icon-new-window.svg" alt="icon-new-window">
+    </div>
+  }
+</div>

@@ -1,3 +1,4 @@
+import { BodyComponent } from '../body/body.component';
 import { HeaderComponent } from '../header/header.component';
 import { InputComponent } from '../ui/input/input.component';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
@@ -6,6 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'app-home',
   standalone: true,
   imports: [
+    BodyComponent,
     InputComponent,
     HeaderComponent
   ],
