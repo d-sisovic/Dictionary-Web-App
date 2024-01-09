@@ -1,3 +1,11 @@
+@use "../../../styles/breakpoints";
+
 .container {
   padding: 2.4rem 2.4rem 8.5rem 2.4rem;
+}
+
+@include breakpoints.mq(tablet) {
+  .container {
+    padding: 5.8rem 4rem 11.8rem 3.9rem;
+  }
 }

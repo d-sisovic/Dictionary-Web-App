@@ -1,3 +1,5 @@
+@use "../../../styles/breakpoints";
+
 .container {
   display: flex;
   align-items: center;
@@ -19,6 +21,17 @@
       display: block;
       margin: 0 1.6rem;
       background: var(--E9E9E9);
+    }
+  }
+}
+
+@include breakpoints.mq(tablet) {
+  .container {
+    margin-bottom: 5.15rem;
+
+    .logo {
+      width: 3.2rem;
+      height: 3.65rem;
     }
   }
 }
