@@ -9,3 +9,11 @@
     padding: 5.8rem 4rem 11.8rem 3.9rem;
   }
 }
+
+@include breakpoints.mq(desktop) {
+  .container {
+    width: 73.6rem;
+    margin: 0 auto;
+    padding: 2.4rem 0 12.4rem 0;
+  }
+}
