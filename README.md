@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: []
-- Live Site URL: []
+- Solution URL: [https://www.frontendmentor.io/solutions/dictionary-web-app-angular-tj7_zN_214]
+- Live Site URL: [https://d-sisovic.github.io/Dictionary-Web-App/]
 
 ## My process
 
