@@ -1,7 +1,7 @@
-import { NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DOCUMENT, NgClass } from '@angular/common';
 import { StoreService } from '../../../services/store.service';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, inject } from '@angular/core';
 
 @Component({
   selector: 'app-theme-switcher',
@@ -20,7 +20,11 @@ export class ThemeSwitcherComponent {
 
   public checkboxState = false;
 
+  constructor(@Inject(DOCUMENT) private readonly document: Document) { }
+
   public onChange(isDarkTheme: boolean): void {
     this.storeService.setTheme(isDarkTheme);
+
+    this.document.querySelector('body')?.setAttribute('data-theme', `${isDarkTheme}`);
   }
 }

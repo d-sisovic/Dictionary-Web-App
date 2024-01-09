@@ -7,7 +7,7 @@
   border-radius: 1.6rem;
   flex-direction: column;
   background: var(--FFFFFF);
-  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: var(--dropdown-box-shadow);
 
   &__item {
     cursor: pointer;
