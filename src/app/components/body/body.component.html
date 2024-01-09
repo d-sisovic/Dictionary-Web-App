@@ -1,5 +1,5 @@
-@if(dictionaryData(); as dictionaryData) {
 <div class="container">
+  @if(dictionaryData(); as dictionaryData) {
   <app-title [dictionaryData]="dictionaryData"></app-title>
 
   <div class="body">
@@ -11,9 +11,9 @@
   @if (dictionaryData.sourceUrls.length) {
   <app-source [dictionaryData]="dictionaryData"></app-source>
   }
-</div>
-} @else {
+  } @else {
   @if (keyword().length) {
-    <app-no-result></app-no-result>
+  <app-no-result></app-no-result>
   }
-}
+  }
+</div>
