@@ -1,23 +1,31 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SourceComponent } from './source.component';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 describe('SourceComponent', () => {
   let component: SourceComponent;
   let fixture: ComponentFixture<SourceComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       imports: [SourceComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(SourceComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  }));
 
   it('should create', () => {
+    component.dictionaryData = {
+      license: { name: "Test license", url: "license on url" },
+      word: "Apple",
+      sourceUrls: [],
+      phonetics: [],
+      meanings: []
+    };
+
+    fixture.detectChanges();
+
     expect(component).toBeTruthy();
   });
 });

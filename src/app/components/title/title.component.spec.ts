@@ -1,23 +1,31 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TitleComponent } from './title.component';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 describe('TitleComponent', () => {
   let component: TitleComponent;
   let fixture: ComponentFixture<TitleComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       imports: [TitleComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(TitleComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  }));
 
   it('should create', () => {
+    component.dictionaryData = {
+      license: { name: "Test license", url: "license on url" },
+      word: "Apple",
+      sourceUrls: [],
+      phonetics: [],
+      meanings: []
+    };
+
+    fixture.detectChanges();
+
     expect(component).toBeTruthy();
   });
 });

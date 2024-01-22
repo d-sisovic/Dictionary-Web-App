@@ -1,23 +1,30 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MeaningComponent } from './meaning.component';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 describe('MeaningComponent', () => {
   let component: MeaningComponent;
   let fixture: ComponentFixture<MeaningComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       imports: [MeaningComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(MeaningComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  }));
 
   it('should create', () => {
+    component.meaning = {
+      partOfSpeech: "",
+      synonyms: [],
+      antonyms: [],
+      definitions: []
+    };
+
+    fixture.detectChanges();
+
     expect(component).toBeTruthy();
   });
 });
