@@ -28,15 +28,15 @@ export class StoreService {
     return this.keyword;
   }
 
+  public get getTheme(): Signal<boolean> {
+    return this.darkTheme;
+  }
+
   public get getFreeDictionaryResponse(): Signal<IFreeDictionaryResponse | null> {
     return this.freeDictionaryResponse;
   }
 
   public get getFreeDictionaryAudioUrl(): Signal<string> {
     return computed(() => this.getFreeDictionaryResponse()?.phonetics.find(item => item.audio)?.audio || '');
-  }
-
-  public get getTheme(): Signal<boolean> {
-    return this.darkTheme;
   }
 }

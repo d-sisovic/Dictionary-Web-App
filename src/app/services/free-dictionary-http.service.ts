@@ -13,7 +13,7 @@ export class FreeDictionaryHttpService {
   private readonly http = inject(HttpClient);
   private readonly storeService = inject(StoreService);
 
-  private readonly freeDictionaryApiUrl: string = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
+  public readonly freeDictionaryApiUrl: string = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
 
   constructor() { }
 
